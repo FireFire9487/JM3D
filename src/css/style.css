@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 245, 200);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+header {
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+    /* Ensure no extra space */
+}
+
+header h2 {
+    text-align: center;
+    font-size: 36px;
+    margin: 0;
+    /* Ensure no extra space */
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 10px;
+    /* Only horizontal margin */
+    padding: 20px;
+    background-color: azure;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    box-sizing: border-box;
+    align-items: center;
+    /* Center-align items vertically */
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.left img {
+    max-width: 200px;
+}
+
+.right {
+    width: 50%;
+    flex-grow: 1;
+    padding: 20px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+}
+
+.right h2 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+}
+
+.right label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.right input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.right button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.right button:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    padding: 5px;
+    background-color: rgb(128, 128, 128);
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    /* Ensure no extra space */
+}
+
+.vertical-bar {
+    width: 1px;
+    background-color: gray;
+    height: 250px;
+    /* Adjust height as necessary */
+    margin: 0 20px;
+    /* Add some space around the bar */
+}
