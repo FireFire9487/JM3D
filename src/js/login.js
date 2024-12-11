@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    // Move focus to password input on Enter press in username input
+    usernameInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            passwordInput.focus();
+        }
+    });
+
+    // Trigger login on Enter press in password input
+    passwordInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            login();
+        }
+    });
+});
+
 async function fetchAccounts() {
     try {
         console.log('Attempting to fetch accounts...');
