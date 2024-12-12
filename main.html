@@ -8,31 +8,35 @@
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="icon" href="src/img/icon.png" type="image/png">
     <script>
-        if (sessionStorage.getItem('authenticated') !== 'true') {
-            window.location.href = 'index.html';
-        }
-
-        // Inactivity timer function
-        let inactivityTime = function () {
-            let time;
-            window.onload = resetTimer;
-            document.onmousemove = resetTimer;
-            document.onkeypress = resetTimer;
-            document.ontouchstart = resetTimer; // for mobile devices
-
-            function logout() {
-                alert("您已經閒置 10 分鐘，請重新登錄。");
-                sessionStorage.removeItem('authenticated');
+        document.addEventListener('DOMContentLoaded', () => {
+            const authenticated = sessionStorage.getItem('authenticated');
+            console.log('Session authenticated state:', authenticated);
+            if (authenticated !== 'true') {
                 window.location.href = 'index.html';
             }
 
-            function resetTimer() {
-                clearTimeout(time);
-                time = setTimeout(logout, 600000); // 10 minutes in milliseconds
-            }
-        };
+            // Inactivity timer function
+            let inactivityTime = function () {
+                let time;
+                window.onload = resetTimer;
+                document.onmousemove = resetTimer;
+                document.onkeypress = resetTimer;
+                document.ontouchstart = resetTimer; // for mobile devices
 
-        document.addEventListener('DOMContentLoaded', inactivityTime);
+                function logout() {
+                    alert("您已經閒置 10 分鐘，請重新登錄。");
+                    sessionStorage.removeItem('authenticated');
+                    window.location.href = 'index.html';
+                }
+
+                function resetTimer() {
+                    clearTimeout(time);
+                    time = setTimeout(logout, 600000); // 10 minutes in milliseconds
+                }
+            };
+
+            inactivityTime(); // Initialize inactivity timer
+        });
     </script>
 </head>
 

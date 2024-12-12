@@ -77,7 +77,8 @@ async function login() {
     if (loginSuccess) {
         alert('成功登錄！');
         sessionStorage.setItem('authenticated', 'true');
-        window.location.href = './main.html'; // Ensure this is the correct path
+        console.log('User authenticated, redirecting to main.html');
+        window.location.href = 'main.html'; // Ensure this is the correct path
     } else {
         alert('無效的賬戶名稱或密碼。');
     }
