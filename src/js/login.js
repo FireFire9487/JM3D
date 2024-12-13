@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function fetchAccounts() {
     try {
         console.log('Attempting to fetch accounts...');
-        const response = await fetch('./src/database/accounts.json');
+        const response = await fetch('./src/85ce81a6f541/18d27b24.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }

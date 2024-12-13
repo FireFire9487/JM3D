@@ -40,41 +40,39 @@ footer {
     /* Ensure no extra space */
 }
 
-nav {
-    background-color: rgb(128, 128, 128); /* Background color of the nav bar */
-    padding: 10px;
-    border-radius: 10px; /* Rounded corners for the nav bar */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a slight shadow for depth */
-    width: 100%;
-}
-
-nav ul {
-    list-style-type: none; /* Remove default bullet points */
-    margin: 0;
-    padding: 1px;
-    display: flex; /* Display list items horizontally */
-    justify-content: space-around; /* Space the items evenly */
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    text-decoration: none; /* Remove underline from links */
-    color: white; /* Link text color */
-    font-weight: bold; /* Make link text bold */
-    padding: 10px 15px;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-    border-radius: 5px; /* Rounded corners for links */
-}
-
-nav ul li a:hover {
-    background-color: rgb(80, 80, 80); /* Change background color on hover */
-    color: #ffffff; /* Change text color on hover */
-}
-
 main {
     width: 100%;
     height: 100%;
+}
+
+table {
+    background-color: whitesmoke;
+    padding: 20px 20px;
+    margin: 20px 20px;
+    border-radius: 20px;
+}
+
+table img {
+    width: 300px;
+}
+
+table p {
+    text-align: center;
+    font-size: 18px;
+}
+
+table td {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(49, 49, 49);
+}
+
+.back {
+    background-color: rgb(80, 80, 255);
+    padding: 10px 10px;
+    color: white;
+    border-radius: 5px;
 }
