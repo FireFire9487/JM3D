@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh_TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主頁·初三丁内聯網</title>
+
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="icon" href="../src/img/icon.png" type="image/png">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const authenticated = sessionStorage.getItem('authenticated');
+            console.log('Session authenticated state:', authenticated);
+            if (authenticated !== 'true') {
+                window.location.href = '../index.html';
+            }
+
+            // Inactivity timer function
+            let inactivityTime = function () {
+                let time;
+                window.onload = resetTimer;
+                document.onmousemove = resetTimer;
+                document.onkeypress = resetTimer;
+                document.ontouchstart = resetTimer; // for mobile devices
+
+                function logout() {
+                    alert("您已經閒置 10 分鐘，請重新登錄。");
+                    sessionStorage.removeItem('authenticated');
+                    window.location.href = '../index.html';
+                }
+
+                function resetTimer() {
+                    clearTimeout(time);
+                    time = setTimeout(logout, 600000); // 10 minutes in milliseconds
+                }
+            };
+
+            inactivityTime(); // Initialize inactivity timer
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h2>管理員分頁·初三丁内聯網</h2>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        <p>©FireFire 2020-2024. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -60,6 +60,15 @@ async function login() {
     const password = document.getElementById('password').value;
     console.log('Login attempt with:', { username, password });
 
+    // Check if username is 'root' and password is 'admin'
+    if (username === 'root' && password === 'admin') {
+        alert('成功登錄到管理介面！');
+        sessionStorage.setItem('authenticated', 'true');
+        console.log('Admin authenticated, redirecting to admin/index.html');
+        window.location.href = 'admin/index.html'; // Redirect to admin page
+        return; // Exit the function early since admin is logged in
+    }
+
     const accounts = await fetchAccounts();
     if (!accounts) {
         alert('無法讀取賬戶内容。');

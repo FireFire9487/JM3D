@@ -34,7 +34,6 @@ footer {
     background-color: rgb(128, 128, 128);
     width: 100%;
     text-align: center;
-    position: fixed;
     bottom: 0;
     margin: 0;
     /* Ensure no extra space */
